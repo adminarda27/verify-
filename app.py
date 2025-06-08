@@ -14,8 +14,8 @@ ACCESS_LOG_FILE = "access_log.json"
 
 DISCORD_CLIENT_ID = os.getenv("1367928958510829608")
 DISCORD_CLIENT_SECRET = os.getenv("9xeXoT2Irca7khBnGS6p8VdHgsR8laA2")
-REDIRECT_URI = os.getenv("http://127.0.0.1:5000/callback")
-
+REDIRECT_URI = os.getenv("https://verify-2kxb.onrender.com/callback")
+DISCORD_BOT_TOKEN =  os.getenv("MTM2NzkyODk1ODUxMDgyOTYwOA.G5U6cz.IzyXiYbycknjPiAemYhDWIua98tipzW64E05Fs")
 
 def get_client_ip():
     if "X-Forwarded-For" in request.headers:
@@ -120,10 +120,6 @@ def show_logs():
     else:
         logs = {}
     return render_template("logs.html", logs=logs)
-
-
-def run_bot():
-    bot.run(os.getenv("MTM2NzkyODk1ODUxMDgyOTYwOA.GFpe_Y.h0mr9RdVBwU__N2NyoWu9ZW9tvSiv3ibufjvj8"))
 
 
 if __name__ == "__main__":
